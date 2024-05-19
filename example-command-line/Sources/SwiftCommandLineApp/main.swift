@@ -1,7 +1,6 @@
 import Foundation
 import SwiftCommandLineAppCore
 
-// Exemplo de uso
 fetchUsers { result in
     switch result {
     case .success(let users):
@@ -12,9 +11,7 @@ fetchUsers { result in
         print("Erro: \(error)")
     }
     
-    // Encerrar o programa após a resposta
     exit(0)
 }
 
-// Manter o loop principal ativo para que a solicitação seja concluída
 RunLoop.main.run()
