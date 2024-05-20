@@ -4,5 +4,5 @@ class Greeter {
     }
 }
 
-let greeter = Greeter()
+let greeter: Greeter = Greeter()
 print(greeter.greeting())
