@@ -146,4 +146,20 @@ swapGeneric(&number1, &number2)
 print("number1: \(number1), number2: \(number2)")  // Output: number1: 20, number2: 10
 ```
 
+### 8. Parâmetros Nomeados
+
+Detalhamento dos Parâmetros
+- Nome Externo (External Name):
+  from: Este é o nome que você usa quando chama a função. Ele torna a chamada da função mais legível, indicando claramente que o segundo argumento representa a cidade de origem da pessoa.
+- Nome Interno (Internal Name):
+  city: Este é o nome usado dentro da implementação da função. Ele permite que você dê um nome significativo ao parâmetro que será usado no corpo da função.
+
+```swift
+func greet(person: String, from city: String) {
+    print("Hello \(person)! Glad to have you here from \(city).")
+}
+
+greet(person: "Alice", from: "New York")
+```
+
 Esses são alguns dos conceitos avançados e úteis sobre funções em Swift que podem ajudar você a escrever código mais flexível e eficiente.
