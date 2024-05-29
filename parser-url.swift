@@ -2,6 +2,7 @@ import Foundation
 
 let urlString: String = "https://example.com:8080/path/to/resource?firstname1=Dead&lastname1=Duck#section1"
 
+print("URL: \(urlString)")
 if let urlComponents = URLComponents(string: urlString) {
     print("Scheme: \(urlComponents.scheme ?? "none")")
     print("Host: \(urlComponents.host ?? "none")")
@@ -21,7 +22,7 @@ var newURLString: String?
 
 if var urlComponents = URLComponents(string: urlString) {
     // Modificar o Path
-    urlComponents.path = "/new/path/to/resource"
+    urlComponents.path = "/new1/path/to/resource"
 
     // Modificar ou adicionar parâmetros de consulta
     var queryItems = urlComponents.queryItems ?? []
@@ -35,6 +36,7 @@ if var urlComponents = URLComponents(string: urlString) {
     if let newURL = urlComponents.url {
         newURLString = newURL.absoluteString
         print("\nNew URL 1: \(newURLString ?? "none")")
+        print("Path: \(urlComponents.path)")
     }
 }
 
@@ -53,8 +55,11 @@ if let url = newURLString {
             }
         }
 
+        urlComponents.path = "/new2/path/to/resource"
+
         if let newURL = urlComponents.url {
             print("\nNew URL 2: \(newURL.absoluteString)")
+            print("Path: \(urlComponents.path)")
             if let queryItems = urlComponents.queryItems {
                 for queryItem in queryItems {
                     print("Query item name: \(queryItem.name), value: \(queryItem.value ?? "none")")
